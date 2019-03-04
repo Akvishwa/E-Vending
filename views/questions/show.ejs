@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="thumbnail">
+        <div class="caption-full" id="showQues">
+            <h3><%= question.ques%></h3>
+            <em><p>Asked By <strong><%= question.author %></strong></p></em>
+        </div>
+    </div>
+    <div class="well">
+        <% var i = 0 %>
+        <h4 id="answerHeader"><%= i %> Answers </h4>
+        <p class="pull-right">
+            <a class="btn btn-md btn-success" href="/education/questions/<%= question._id %>/answers/new">
+                <span class="glyphicon glyphicon-pencil"></span> Write Answer
+            </a>
+        </p>
+        <hr>
+        <% question.answer.forEach(function(answer){ %>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <span><i class = "glyphicon glyphicon-star-empty" id="event"></i></span>
+                        <span>
+                            <li><%= answer.ans %></li>
+                            <span class="pull-right">-<strong><%= answer.author%></strong></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+        
+    </div>
+</div>
+<% include ../partials/footer %>

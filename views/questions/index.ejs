@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="caption-full">
+        <h2 id="questionHeader">Questions</h2>
+        <p class="pull-right">
+            <a class="btn btn-md btn-info" href="/education/questions/new">
+                Ask Question <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+        </p>
+    </div>
+    <hr style="width: 100%">
+    <% ques.forEach(function(question){ %>
+        <div class="thumbnail well ques" >
+            <li class="form-group">
+                <a href="/education/questions/<%= question._id %>">
+                    <div>
+                        <span class="glyphicon glyphicon-question-sign"></span> <%= question.ques %>
+                    </div>   
+                </a>
+                <!--<span><%= question.date%></span>-->
+                <a href=""><span class="pull-right"><%= question.author %></span></a>
+                
+            </li>
+        </div>
+    <% }) %>
+    
+</div>
+<% include ../partials/footer %>

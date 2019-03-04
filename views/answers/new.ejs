@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+<div class="container">
+    <div style="margin:auto; width:50%">
+        <form method="POST" action="/education/questions/<%= question._id %>/answers/new">
+            <div class="form-group">
+                <input class="form-control" type="text" value="<%= question.ques%>" readonly>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" type="text" name="ans[ans]" placeholder="enter your answer here!"></textarea>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="ans[author]" placeholder="Author">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-info">submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<% include ../partials/footer %>
